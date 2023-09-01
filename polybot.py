@@ -11,6 +11,7 @@ import asyncio
 import re
 import requests
 import html
+import os
 intents = discord.Intents.default()
 intents.message_content = True
 client = commands.Bot(command_prefix='!', intents = intents)
@@ -158,4 +159,4 @@ async def timer(interaction: discord.Interaction, time: str):
 
     await interaction.response.send_message(f"⏳ **Timer**   `{mins} : {secs}`", view=Timer(mins,secs))
 
-client.run('TOKEN')
+client.run(f'{os.getenv("DISCORD_TOKEN")}')
