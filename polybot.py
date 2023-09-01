@@ -99,9 +99,9 @@ class Timer(discord.ui.View):
                 self.time2 -= j
                 self.time3 += j
                 await msg.edit(content=f"⏳ **Timer**   `{str(int(self.time2/60)).zfill(2)} : {str(self.time2%60).zfill(2)}`")
-            await asyncio.sleep(float(n))
-            self.time2 -= 1
-            self.time3 += 1
+            await asyncio.sleep(4 + float(n))
+            self.time2 -= 5
+            self.time3 += 5
             if self.time3 == 60:
                 await interaction.channel.send(f"\n\n🟢  **1 minute done!** {interaction.user.mention}")
             if self.time2 == 60:
